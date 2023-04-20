@@ -1,0 +1,64 @@
+{
+  "name": "Drug",
+  "plural": "Drugs",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById",
+        "create",
+        "count",
+        "updateDrug",
+        "deleteById"
+      ]
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "strengths": {
+      "type": [
+        "string"
+      ]
+    },
+    "form": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "drugClass": {
+      "type": "belongsTo",
+      "model": "DrugClass",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "drugUtility": {
+      "type": "belongsTo",
+      "model": "DrugUtility",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

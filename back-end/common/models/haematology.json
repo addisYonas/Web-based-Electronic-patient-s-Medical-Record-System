@@ -1,0 +1,158 @@
+{
+  "name": "Haematology",
+  "plural": "Haematologies",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById",
+        "create",
+        "upsert",
+        "deleteById"
+      ]
+    }
+  },
+  "properties": {
+    "hm1": {
+      "type": "string"
+    },
+    "hm2": {
+      "type": "string"
+    },
+    "hm3": {
+      "type": "string"
+    },
+    "hm4": {
+      "type": "string"
+    },
+    "hm5": {
+      "type": "string"
+    },
+    "hm6": {
+      "type": "string"
+    },
+    "hm7": {
+      "type": "string"
+    },
+    "hm8": {
+      "type": "string"
+    },
+    "hm9": {
+      "type": "string"
+    },
+    "hm10": {
+      "type": "string"
+    },
+    "hm11": {
+      "type": "string"
+    },
+    "hm12": {
+      "type": "object"
+    },
+    "hm13": {
+      "type": "object"
+    },
+    "hm14": {
+      "type": "object"
+    },
+    "hm15": {
+      "type": "object"
+    },
+    "hm16": {
+      "type": "object"
+    },
+    "hm17": {
+      "type": "object"
+    },
+    "hm18": {
+      "type": "object"
+    },
+    "hm19": {
+      "type": "object"
+    },
+    "hm20": {
+      "type": "string"
+    },
+    "hm21": {
+      "type": "string"
+    },
+    "hm22": {
+      "type": "string"
+    },
+    "hm23": {
+      "type": "string"
+    },
+    "hm24": {
+      "type": "string"
+    },
+    "hm25": {
+      "type": "string"
+    },
+    "hm26": {
+      "type": "string"
+    },
+    "hm27": {
+      "type": "string"
+    },
+    "hm28": {
+      "type": "string"
+    },
+    "hm29": {
+      "type": "string"
+    },
+    "hm30": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "orderingDate": {
+      "type": "date"
+    },
+    "fillingDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patient": {
+      "type": "belongsTo",
+      "model": "Patient",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "filledBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "orderedBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

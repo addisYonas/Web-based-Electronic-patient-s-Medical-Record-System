@@ -1,0 +1,122 @@
+{
+  "name": "Immunology",
+  "plural": "Immunologies",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById",
+        "create",
+        "upsert",
+        "deleteById"
+      ]
+    }
+  },
+  "properties": {
+    "im1": {
+      "type": "string"
+    },
+    "im2": {
+      "type": "string"
+    },
+    "im3": {
+      "type": "string"
+    },
+    "im4": {
+      "type": "string"
+    },
+    "im5": {
+      "type": "string"
+    },
+    "im6": {
+      "type": "string"
+    },
+    "im7": {
+      "type": "string"
+    },
+    "im8": {
+      "type": "string"
+    },
+    "im9": {
+      "type": "string"
+    },
+    "im10": {
+      "type": "string"
+    },
+    "im11": {
+      "type": "string"
+    },
+    "im12": {
+      "type": "string"
+    },
+    "im13": {
+      "type": "string"
+    },
+    "im14": {
+      "type": "string"
+    },
+    "im15": {
+      "type": "string"
+    },
+    "im16": {
+      "type": "string"
+    },
+    "im17": {
+      "type": "string"
+    },
+    "im18": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "orderingDate": {
+      "type": "date"
+    },
+    "fillingDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patient": {
+      "type": "belongsTo",
+      "model": "Patient",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "filledBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "orderedBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Vaccination",
+  "plural": "Vaccinations",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById",
+        "createVaccination",
+        "upsert",
+        "deleteById"
+      ]
+    }
+  },
+  "properties": {
+    "vaccine": {
+      "type": "string",
+      "required": true
+    },
+    "takenDate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patient": {
+      "type": "belongsTo",
+      "model": "Patient",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "filledBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,92 @@
+{
+  "name": "Parasitology",
+  "plural": "Parasitologies",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById",
+        "create",
+        "upsert",
+        "deleteById"
+      ]
+    }
+  },
+  "properties": {
+    "pr1": {
+      "type": "string"
+    },
+    "pr2": {
+      "type": "string"
+    },
+    "pr3": {
+      "type": "string"
+    },
+    "pr4": {
+      "type": "string"
+    },
+    "pr5": {
+      "type": "string"
+    },
+    "pr6": {
+      "type": "string"
+    },
+    "pr7": {
+      "type": "string"
+    },
+    "pr8": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "orderingDate": {
+      "type": "date"
+    },
+    "fillingDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patient": {
+      "type": "belongsTo",
+      "model": "Patient",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "filledBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "orderedBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

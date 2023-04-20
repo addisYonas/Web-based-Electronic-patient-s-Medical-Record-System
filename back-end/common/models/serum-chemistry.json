@@ -1,0 +1,170 @@
+{
+  "name": "SerumChemistry",
+  "plural": "SerumChemistries",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById",
+        "create",
+        "upsert",
+        "deleteById"
+      ]
+    }
+  },
+  "properties": {
+    "sc1": {
+      "type": "string"
+    },
+    "sc2": {
+      "type": "string"
+    },
+    "sc3": {
+      "type": "string"
+    },
+    "sc4": {
+      "type": "string"
+    },
+    "sc5": {
+      "type": "string"
+    },
+    "sc6": {
+      "type": "string"
+    },
+    "sc7": {
+      "type": "string"
+    },
+    "sc8": {
+      "type": "string"
+    },
+    "sc9": {
+      "type": "string"
+    },
+    "sc10": {
+      "type": "string"
+    },
+    "sc11": {
+      "type": "string"
+    },
+    "sc12": {
+      "type": "string"
+    },
+    "sc13": {
+      "type": "string"
+    },
+    "sc14": {
+      "type": "string"
+    },
+    "sc15": {
+      "type": "string"
+    },
+    "sc16": {
+      "type": "string"
+    },
+    "sc17": {
+      "type": "string"
+    },
+    "sc18": {
+      "type": "string"
+    },
+    "sc19": {
+      "type": "string"
+    },
+    "sc20": {
+      "type": "string"
+    },
+    "sc21": {
+      "type": "string"
+    },
+    "sc22": {
+      "type": "string"
+    },
+    "sc23": {
+      "type": "string"
+    },
+    "sc24": {
+      "type": "string"
+    },
+    "sc25": {
+      "type": "string"
+    },
+    "sc26": {
+      "type": "string"
+    },
+    "sc27": {
+      "type": "string"
+    },
+    "sc28": {
+      "type": "string"
+    },
+    "sc29": {
+      "type": "string"
+    },
+    "sc30": {
+      "type": "string"
+    },
+    "sc31": {
+      "type": "string"
+    },
+    "sc32": {
+      "type": "string"
+    },
+    "sc33": {
+      "type": "string"
+    },
+    "sc34": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "orderingDate": {
+      "type": "date"
+    },
+    "fillingDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patient": {
+      "type": "belongsTo",
+      "model": "Patient",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "filledBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "orderedBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

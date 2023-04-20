@@ -1,0 +1,11 @@
+[
+  {
+    "fullName": "Tenadata Tenadata",
+    "username": "admin",
+    "email": "admin@tenadata.com",
+    "phone": "+251915565300",
+    "password": "admin",
+    "isActive": true,
+    "userRoleId": ""
+  }
+]

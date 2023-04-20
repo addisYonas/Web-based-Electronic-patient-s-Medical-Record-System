@@ -1,0 +1,71 @@
+{
+  "name": "OHI",
+  "plural": "OHIs",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById",
+        "createOHI",
+        "generateOHI",
+        "upsert",
+        "deleteById"
+      ]
+    }
+  },
+  "properties": {
+    "useTobacco": {
+      "type": "boolean",
+      "required": true
+    },
+    "alcoholUse": {
+      "type": "boolean",
+      "required": true
+    },
+    "sexualActivity": {
+      "type": "string"
+    },
+    "exercise": {
+      "type": "string"
+    },
+    "sleep": {
+      "type": "string"
+    },
+    "diet": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patient": {
+      "type": "belongsTo",
+      "model": "Patient",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "filledBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

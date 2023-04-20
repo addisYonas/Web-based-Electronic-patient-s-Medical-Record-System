@@ -1,0 +1,61 @@
+{
+  "name": "PMH",
+  "plural": "PMHs",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById",
+        "createPMH",
+        "upsert",
+        "deleteById"
+      ]
+    }
+  },
+  "properties": {
+    "disease": {
+      "type": "string",
+      "required": true
+    },
+    "isCurrent": {
+      "type": "boolean",
+      "required": true
+    },
+    "commnet": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patientId": {
+      "type": "belongsTo",
+      "model": "Patient",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "filledBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

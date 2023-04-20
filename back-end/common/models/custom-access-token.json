@@ -1,0 +1,35 @@
+{
+  "name": "CustomAccessToken",
+  "base": "AccessToken",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userInfo": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "idName": "id",
+      "polymorphic": {
+        "idType": "string",
+        "foreignKey": "userId",
+        "discriminator": "principalType"
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "Deny",
+      "property": "*"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,110 @@
+{
+  "name": "OtherImmunology",
+  "plural": "OtherImmunologies",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById",
+        "create",
+        "upsert",
+        "deleteById"
+      ]
+    }
+  },
+  "properties": {
+    "oi1": {
+      "type": "string"
+    },
+    "oi2": {
+      "type": "string"
+    },
+    "oi3": {
+      "type": "string"
+    },
+    "oi4": {
+      "type": "string"
+    },
+    "oi5": {
+      "type": "string"
+    },
+    "oi6": {
+      "type": "string"
+    },
+    "oi7": {
+      "type": "string"
+    },
+    "oi8": {
+      "type": "string"
+    },
+    "oi9": {
+      "type": "string"
+    },
+    "oi10": {
+      "type": "string"
+    },
+    "oi11": {
+      "type": "string"
+    },
+    "oi12": {
+      "type": "string"
+    },
+    "oi13": {
+      "type": "string"
+    },
+    "oi14": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "orderingDate": {
+      "type": "date"
+    },
+    "fillingDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patient": {
+      "type": "belongsTo",
+      "model": "Patient",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "filledBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "orderedBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

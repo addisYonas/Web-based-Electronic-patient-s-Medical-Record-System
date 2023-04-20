@@ -1,0 +1,72 @@
+{
+  "name": "Profile",
+  "plural": "Profiles",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById",
+        "create",
+        "upsert",
+        "deleteById"
+      ]
+    }
+  },
+  "properties": {
+    "age": {
+      "type": "number",
+      "required": true
+    },
+    "sex": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string"
+    },
+    "address": {
+      "type": "object",
+      "required": true
+    },
+    "education": {
+      "type": "object"
+    },
+    "specialization": {
+      "type": "object"
+    },
+    "carrierLevel": {
+      "type": "string"
+    },
+    "collegeOrUniversity": {
+      "type": "string"
+    },
+    "year": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "userAccount": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

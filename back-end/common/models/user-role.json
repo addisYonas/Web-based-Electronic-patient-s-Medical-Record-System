@@ -1,0 +1,48 @@
+{
+  "name": "UserRole",
+  "plural": "UserRoles",
+  "base": "Role",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById"
+      ]
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "userAccounts": {
+      "type": "hasMany",
+      "model": "UserAccount",
+      "foreignKey": ""
+    },
+    "permissionApis": {
+      "type": "hasMany",
+      "model": "permissionApi",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

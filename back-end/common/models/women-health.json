@@ -1,0 +1,72 @@
+{
+  "name": "WomenHealth",
+  "plural": "WomenHealths",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById",
+        "createWomenHealth",
+        "generateWomenHealth",
+        "upsert",
+        "deleteById"
+      ]
+    }
+  },
+  "properties": {
+    "noOfPregnancies": {
+      "type": "number"
+    },
+    "noOfDeliveries": {
+      "type": "number"
+    },
+    "noOfAbortions": {
+      "type": "number"
+    },
+    "noOfMiscarriages": {
+      "type": "number"
+    },
+    "ageAtFirstMense": {
+      "type": "number"
+    },
+    "lengthOfMense": {
+      "type": "number"
+    },
+    "concernsOfMense": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patient": {
+      "type": "belongsTo",
+      "model": "Patient",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "filledBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

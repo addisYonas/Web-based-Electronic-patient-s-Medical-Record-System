@@ -1,0 +1,65 @@
+{
+  "name": "FamilyMedical",
+  "plural": "FamilyMedicals",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById",
+        "createFamilyMedical",
+        "upsert",
+        "deleteById"
+      ]
+    }
+  },
+  "properties": {
+    "family": {
+      "type": "string",
+      "required": true
+    },
+    "livingStatus": {
+      "type": "string",
+      "required": true
+    },
+    "disease": {
+      "type": "string",
+      "required": true
+    },
+    "comment": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patient": {
+      "type": "belongsTo",
+      "model": "Patient",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "filledBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

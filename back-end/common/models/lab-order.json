@@ -1,0 +1,94 @@
+{
+  "name": "lab-order",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById",
+        "create",
+        "upsert",
+        "deleteById"
+      ]
+    }
+  },
+  "properties": {
+    "note": {
+      "type": "string",
+      "required": true
+    },
+    "orderingDate": {
+      "type": "date"
+    },
+    "fillingDate": {
+      "type": "date"
+    },
+    "haematology": {
+      "type": "object"
+    },
+    "immunology": {
+      "type": "object"
+    },
+    "microBiology": {
+      "type": "object"
+    },
+    "otherImmunology": {
+      "type": "object"
+    },
+    "otherLab": {
+      "type": "object"
+    },
+    "parasitology": {
+      "type": "object"
+    },
+    "radiology": {
+      "type": "object"
+    },
+    "serumChemistry": {
+      "type": "object"
+    },
+    "urinalysis": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "orderedBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "filledBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "patient": {
+      "type": "belongsTo",
+      "model": "Patient",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

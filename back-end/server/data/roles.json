@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Admin",
+    "description": "Administrator User"
+  },
+  {
+    "name": "Doctor",
+    "description": "Doctors who diagnose patient and fill medical information"
+  },
+  {
+    "name": "Lab Technician",
+    "description": "Lab technicians who test patient and fill lab results"
+  },
+  {
+    "name": "Student",
+    "description": "Medical students who learn from the medical histories"
+  }
+]

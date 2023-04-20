@@ -1,0 +1,159 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin",
+      "../node_modules/loopback-softdelete-2-mixin",
+      "../node_modules/loopback-row-count-mixin",
+      "../node_modules/loopback-disable-method-mixin",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "ACL": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongoDS",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "CustomAccessToken": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "UserAccount": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "UserRole": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Profile": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Patient": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "ClinicalNote": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Allergy": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "PMH": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Vaccination": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Surgery": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "FamilyMedical": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "SocialHistory": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "OHI": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "WomenHealth": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Drug": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Prescription": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Haematology": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Immunology": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "SerumChemistry": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Parasitology": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "OtherImmunology": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Urinalysis": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "MicroBiology": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Radiography": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "OtherLab": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Discussion": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Comment": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "DrugUtility": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "DrugClass": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Radiology": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "lab-order": {
+    "dataSource": "mongoDS",
+    "public": true
+  }
+}

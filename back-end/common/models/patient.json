@@ -1,0 +1,76 @@
+{
+  "name": "Patient",
+  "plural": "Patients",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "SoftDelete": true,
+    "RowCount": true,
+    "DisableMethods": {
+      "expose": [
+        "find",
+        "findById",
+        "findByKey",
+        "upsert",
+        "deleteById",
+        "createPatient",
+        "updatePatient"
+      ]
+    }
+  },
+  "properties": {
+    "key": {
+      "type": "string"
+    },
+    "info": {
+      "type": "string"
+    },
+    "age": {
+      "type": "number",
+      "required": true
+    },
+    "sex": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "createdBy": {
+      "type": "belongsTo",
+      "model": "UserAccount",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "createPatient"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "updatePatient"
+    }
+  ],
+  "methods": {}
+}
